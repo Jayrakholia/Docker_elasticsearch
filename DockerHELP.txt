@@ -1,0 +1,54 @@
+-- Docker Build
+
+docker build [options] .
+  -t "app/container_name"
+
+-- Run Docker
+
+docker run [options] IMAGE
+
+-- Manage Docker
+
+docker create [options] IMAGE
+  -a, --attach               # attach stdout/err (Active on terminal and block the terminal if we stop that open new terminal and stop it)
+  -i, --interactive          # attach stdin (interactive) (that mean we run our program on terminal not a runsever on web)
+  -t, --tty                  # pseudo-tty (we can not generate output ..it can't response)
+      --name NAME            # name your image
+  -p, --publish 5000:5000    # port map
+      --expose 5432          # expose a port to linked containers
+  -P, --publish-all          # publish all ports
+      --link container:alias # linking
+
+  docker exec [options] CONTAINER COMMAND
+  -d, --detach        # run in background
+  -i, --interactive   # stdin
+  -t, --tty           # interactive
+
+-- Docker Start And Stop
+
+docker start [options] CONTAINER
+  -a, --attach        # attach stdout/err
+  -i, --interactive   # attach stdin
+
+docker stop [options] CONTAINER
+
+-- Show Docker List
+
+$ docker ps
+$ docker ps -a
+$ docker kill $ID
+docker system prune (delete container)
+docker system prune -a (all delete include a images)
+
+-- Docker images
+
+docker images
+
+docker rmi //for delete images//
+
+docker rm //for delete container//
+
+-- FOR INSPECT:
+
+docker image inspect <img>
+
